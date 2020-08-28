@@ -47,7 +47,7 @@ We're going to set the following parameters:
 * RDN LDAP attribute: uid
 * UUID LDAP attribute: uid
 * User Object Classes: inetOrgPerson
-* Connection URL: ldap://[ipaddress]:3890 -- for reasons I don't understand, you can't just use ldap://ldap here - you'll have to run `docker inspect ldap | grep IPAddress` and use that.
+* Connection URL: ldap://ldap:389
 * Users DN: `ou=users,dc=example,dc=org
 * Custom User LDAP Filter: _leave blank_
 * Search Scope: One Level

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  oidc_kc:
+    container_name: oidc
+    image: jboss/keycloak
+    ports:
+      - "8080:8080"
+#      - "8443:8443"
+#    volumes:
+#      - ./oidc/tls.crt:/etc/x509/https/tls.crt
+#      - ./oidc/tls.key:/etc/x509/https/tls.key
+    environment:
+      KEYCLOAK_USER: kcadmin
+      KEYCLOAK_PASSWORD: admin
+
+  ldap_mock:
+    container_name: ldap
+    image: osixia/openldap
+    environment:
+      LDAP_DOMAIN: example.org
+      LDAP_ADMIN_PASSWORD: admin
+    ports:
+      - "3890:389"

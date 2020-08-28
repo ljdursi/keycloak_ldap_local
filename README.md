@@ -48,11 +48,11 @@ We're going to set the following parameters:
 * UUID LDAP attribute: uid
 * User Object Classes: inetOrgPerson
 * Connection URL: ldap://ldap:389
-* Users DN: `ou=users,dc=example,dc=org
+* Users DN: `ou=users,dc=example,dc=org`
 * Custom User LDAP Filter: _leave blank_
 * Search Scope: One Level
 * Bind Type: simple
-* Bind DN: `cn=admin,dc=example,dc=org`"
+* Bind DN: `cn=admin,dc=example,dc=org`
 * Bind Credential: `admin`
 
 That should be enough; hit "save" and then "Test Connection"

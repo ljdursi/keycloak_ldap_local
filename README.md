@@ -4,7 +4,17 @@
 
 ## Running
 
-Fire the keycloak (odic) and LDAP server (ldap) up:
+First generate some self-signed certificates, so that authentication involving keycloak can more realistically
+involve TLS (within the docker network):
+
+```
+./generate-certs.sh
+```
+
+You'll be asked for a passphrase for the signing key and to validate it, and then asked for that key twice more.
+The root CA certificate will be in `./rootCA.crt`.
+
+Now fire the keycloak (odic) and LDAP server (ldap) up:
 
 ```
 docker-compose up -d

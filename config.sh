@@ -9,6 +9,7 @@ readonly CLIENT_LOGIN_ID=mock_login_client
 readonly CLIENT_LOGIN_SECRET=mock_login_secret
 
 readonly BASEURL=http://localhost:8080/auth/realms/${REALM}
+readonly BASEURL_TLS=https://localhost:8443/auth/realms/${REALM}
 export ADMIN ADMINPWD
 export USER USERPWD
 export CLIENT_LOGIN_ID CLIENT_LOGIN_SECRET

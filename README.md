@@ -10,14 +10,13 @@ Fire the keycloak (odic) and LDAP server (ldap) up:
 docker-compose up -d
 ```
 
-While keycloak is booting up set up the users in the ldap service
+While keycloak is booting up set up the users in the ldap service - this adds the users in [ldap_mock/mock_users.ldif](./ldap_mock/mock_users.ldif):
 
  ```
  ./ldap_mock/config_ldap
-
  ```
 
-and when Keycloak up and running (when `docker-compose logs oidc` shows `Admin console listening`), add the realm and users
+for authentication and when Keycloak up and running (when `docker-compose logs oidc_kc` shows `Admin console listening`), add the realm and users
 
  ```
  ./oidc/config-oidc-service
@@ -39,23 +38,25 @@ Under "User Federation", add an LDAP provider.
 
 We're going to set the following parameters:
 
+* enabled: ON
+* console display name: _whatever you like, 'ldap' is fine_
 * import users: OFF
 * edit mode: READ_ONLY
-* sync registrations: off
+* sync registrations: OFF
 * vendor: Other
 * username LDAP attribute: mail
 * RDN LDAP attribute: uid
 * UUID LDAP attribute: uid
 * User Object Classes: inetOrgPerson
 * Connection URL: ldap://ldap:389
-* Users DN: `ou=users,dc=example,dc=org`
+* Users DN: `dc=example,dc=org`
 * Custom User LDAP Filter: _leave blank_
 * Search Scope: One Level
 * Bind Type: simple
 * Bind DN: `cn=admin,dc=example,dc=org`
 * Bind Credential: `admin`
 
-That should be enough; hit "save" and then "Test Connection"
+That should be enough; hit "save" and then "Test Connection".  Then hit "Synchronize all users".
 
 ## Authenticating against keycloak
 
@@ -65,7 +66,7 @@ There is a client ID/secret setup by the configuration scripts:
 * client_ID: mock_login_client
 * client_secret: mock_login_secret
 
-and the appropriate endpoints for the client to call can be listsed by running
+and the appropriate endpoints for the client to call can be listed by running
 
 ```
  ./oidc/test_scripts/wellknown.sh
@@ -84,3 +85,36 @@ which will output, amongst other things
 
 Any redirect URL will work with this mock client (a production setup would be more selective)
 
+We can test that we can authenticate with the LDAP users with a
+script in `oidc/test_scripts`.  In the config script, the mock login
+client has explicitly enabled the resource owner credentials flow,
+where rather than the usual "OAuth dance" the user agent simply
+provides the username/password directly to the IdP and gets the
+token back.  This is almost certainly a bad idea for authentication
+in production (where you likely want the Authorization Code flow
+with PKCE) but lets us easily test to make sure the authentication
+is working.
+
+The LDAP users are in a text file in [ldap_mock/mock_users.ldif](./ldap_mock/mock_users.ldif); let's take
+the first
+
+```
+dn: uid=347d6cc4-88e0-4264-8f10-bc1699ce89c5,dc=example,dc=org
+uid: 347d6cc4-88e0-4264-8f10-bc1699ce89c5
+givenName: Billi
+sn: Coucher
+cn: Billi Coucher
+userPassword: tCY8hf5
+objectClass: inetOrgPerson
+mail: bcoucherd@house.gov
+```
+
+And check loging in.  Above we set the username in Keycloak to be the `mail` field, so let's
+log in with that username and userPassword: (note URL encoding of email address):
+
+```
+./oidc/test_scripts/get_token_any_user.sh bcoucherd%40house.gov tCY8hf5
+```
+
+and we should successfully get a token back.  We've authenticated into keycloak with
+one of the LDAP users.

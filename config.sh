@@ -9,8 +9,6 @@ readonly CLIENT_LOGIN_ID=mock_login_client
 readonly CLIENT_LOGIN_SECRET=mock_login_secret
 
 readonly BASEURL=http://localhost:8080/auth/realms/${REALM}
-readonly OPAURL=https://localhost:8181/v1/data/permissions/datasets
-readonly SHIMURL=https://localhost:8180/permissions
 export ADMIN ADMINPWD
 export USER USERPWD
 export CLIENT_LOGIN_ID CLIENT_LOGIN_SECRET

@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 source config.sh
 
 readonly defaultuser="None"
@@ -10,7 +10,7 @@ readonly PASSWD=${2:-$defaultpass}
 
 function usage {
      >&2 echo "Gets authorization token for user"
-     >&2 echo "Usage: $0 usename password"
+     >&2 echo "Usage: $0 username password"
      exit 1
 }
 

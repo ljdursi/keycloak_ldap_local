@@ -20,13 +20,17 @@ Now fire the keycloak (odic) and LDAP server (ldap) up:
 docker-compose up -d
 ```
 
-While keycloak is booting up set up the users in the ldap service - this adds the users in [ldap_mock/mock_users.ldif](./ldap_mock/mock_users.ldif):
+Once the LDAP service is running (`docker-compose logs ldap_mock` ends with `slapd starting`), 
+set up the users in the ldap service - this adds the users in
+[ldap_mock/mock_users.ldif](./ldap_mock/mock_users.ldif):
 
  ```
  ./ldap_mock/config_ldap
  ```
 
-for authentication and when Keycloak up and running (when `docker-compose logs oidc_kc` shows `Admin console listening`), add the realm and users
+You should get a bunch of lines like `adding new entry "uid=55532dde-dfd6-4811-8ceb-518631f552ee,dc=example,dc=org"`.
+
+When Keycloak up and running (when `docker-compose logs oidc_kc` shows `Admin console listening`), add the realm and users
 
  ```
  ./oidc/config-oidc-service
@@ -128,3 +132,10 @@ log in with that username and userPassword: (note URL encoding of email address)
 
 and we should successfully get a token back.  We've authenticated into keycloak with
 one of the LDAP users.
+
+From localhost, you can authenticate against keycloak using standard
+oauth2/oidc libraries without TLS at http://localhost:8080/auth/realms/mockrealm (run
+`./oidc/test_scripts/wellknown.sh` to get the specific endpoints.)
+
+From within the docker-compose network, you can use TLS (with the CA certificate at rootCA.crt) 
+using https://oidc:8443/auth/realms/mockrealm/.

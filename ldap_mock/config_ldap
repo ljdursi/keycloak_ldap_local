@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 docker cp ldap_mock/mock_users.ldif ldap:/tmp

@@ -38,6 +38,12 @@ When Keycloak up and running (when `docker-compose logs oidc_kc` shows `Admin co
 
 That restarts the IdP and so will take 20 seconds or so.
 
+Once configured, patch the Postgres database to make User's profile `Attributes` `Value` to be `VARCHAR`.
+
+```
+./oidc/modify_postgres.sh
+```
+
 ## Loging in as realm admin
 
 Now log in to the mockrealm admin console with username user1/pass1 at: http://127.0.0.1:8080/auth/admin/mockrealm/console/

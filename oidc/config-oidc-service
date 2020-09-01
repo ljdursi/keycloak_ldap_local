@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 for file in config.sh oidc/setup_keycloak_{realm,user_roles}.sh

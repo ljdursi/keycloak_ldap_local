@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 source config.sh
 
 readonly defaultuser="None"

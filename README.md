@@ -1,6 +1,6 @@
-# Keycloak: LDAP + local user registrations demo
+# Keycloak, LDAP, and local user registrations demo
 
-(Takes a lot from https://idaccessman.wordpress.com/2018/08/26/ldap-federation-with-keycloak/)
+![Diagram showing Keycloak, LDAP for existing accounts, and local storage for new registrations](./diagram.png)
 
 ## Running
 

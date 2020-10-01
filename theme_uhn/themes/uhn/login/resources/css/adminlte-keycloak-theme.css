@@ -1,0 +1,297 @@
+body {
+    background-color: #FFF;
+}
+
+.topbar {
+    position: absolute;
+    width: 100%;
+    height: 56px;
+    left: 0px;
+    top: 0px;
+    background: #2899D5;
+    padding-top: 1em;
+    padding-left: 2.5em;
+}
+
+.topbar p.tagline {
+    background: no-repeat url("../img/myUHN_logo_white.svg");
+    position: absolute;
+    padding-left: 5em;
+
+    /* Headline 6 */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.5em;
+    line-height: 19px;
+
+    /* identical to box height, or 120% */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+    /* surface */
+    color: #FFFFFF;
+}
+
+#kc-content, #kc-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 0px 0px 20px;
+
+    position: absolute;
+    width: 440px;
+    height: 480px;
+    left: calc(50% - 440px/2);
+    top: 130px;
+    background: #FFF;
+}
+
+#kc-header-wrapper {
+    padding-left: 18px;
+}
+
+#kc-form p.content-title {
+    position: static;
+    height: 24px;
+    left: 0px;
+    top: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: 0.18px;
+    color: rgba(0, 0, 0, 0.87);
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin-left: 0;
+}
+
+
+#kc-form p.content-tagline {
+    position: static;
+    height: 24px;
+    left: 0px;
+    top: 32px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.6);
+    flex: none;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin-left: 0;
+}
+
+#kc-form-login label {
+    position: static;
+    height: 20px;
+    left: 0px;
+    top: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    flex-grow: 0;
+    margin-top: 1.2em;
+}
+
+#kc-form-login input {
+    background: #FFF;
+    border-color: #DADADA;
+    border-radius: 4px;
+    height: 48px;
+}
+
+#kc-form-login #kc-login {
+    position: static;
+    height: 48px;
+    left: 0px;
+    top: 288px;
+    background: #008060;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    border-radius: 4px;
+    flex: none;
+    order: 3;
+    align-self: center;
+    flex-grow: 0;
+    width: 28em;
+    margin-top: 1.5em;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+div.footer-info p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.25px;
+    flex: none;
+    order: 1;
+    align-self: center;
+    flex-grow: 0;
+    margin-top: 2.4em;
+}
+
+div.footer-info p a {
+    color: #008060;
+}
+
+
+/*
+#kc-header, #kc-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#kc-header-wrapper {
+    display: none;
+}
+
+#kc-header {
+   color: #fff;
+   overflow: visible;
+   padding-left: 80px;
+   margin-top: 10%;
+   white-space: nowrap;
+   background-size: auto 100px;
+   background-repeat: no-repeat;
+   height: 100px;
+   width: 350px;
+}
+
+
+
+@media (max-width: 768px) {
+    #kc-content {
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) {
+    #kc-content {
+        width: 360px;
+    }
+}
+
+.password-container {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#kc-login {
+    float: right;
+}
+
+#kc-error-message p {
+    margin: 0;
+}
+
+.checkbox {
+    margin-bottom: 0px;
+}
+
+.remember-me-checkbox label {
+    padding-left: 0px;        
+}
+
+.register .register-field {
+    margin-bottom: 15px;
+}
+
+.register .register-button-container {
+    margin-top: 20px;
+}
+
+.reset-password .reset-password-field {
+    margin-bottom: 15px;
+}
+
+.update-password .update-password-field {
+    margin-bottom: 15px;
+}
+
+.update-password .update-password-button-container {
+    margin-top: 20px;
+}
+
+.config-totp .config-totp-button-container {
+    margin-top: 15px;
+}
+
+.totp .totp-button-container {
+    margin-top: 15px;
+}
+
+.update-profile .update-profile-field {
+    margin-top: 15px;
+}
+
+.update-profile .update-profile-button-container {
+    margin-top: 20px;
+}
+
+.template .language-picker {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 160px;
+}
+
+.template .language-picker .form-group {
+    white-space: nowrap;
+
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.template .language-picker .language-picker-dropdown-label i {
+    vertical-align: middle;
+    margin-right: 7px;
+    margin-left: -7px;
+    color: #9ca2af;
+}
+
+.template .language-picker select.form-control {
+    border-color: #afb0b3;
+    background: transparent;
+
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.btn-primary, .btn-primary:active {
+    background-color: #295FCB;
+}
+
+.btn-primary:hover, .btn-primary.hover {
+    background-color: #221f76;
+}
+*/

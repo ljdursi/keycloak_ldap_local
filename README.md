@@ -145,3 +145,18 @@ oauth2/oidc libraries without TLS at http://localhost:8080/auth/realms/mockrealm
 
 From within the docker-compose network, you can use TLS (with the CA certificate at rootCA.crt) 
 using https://oidc:8443/auth/realms/mockrealm/.
+
+
+## Theme
+
+This repo includes the theme from https://github.com/amanjeev/keycloak-uhn-login-template.
+In this case it is automatically mounted to the container. This means that you can use this repo
+to play with that theme.
+
+### Activate the theme
+
+1. Log into the admin console after launching the project (see above).
+   URL might be http://127.0.0.1:8080/auth
+2. Go to the appropriate realm -> Realm settings.
+3. Go to the tab Themes.
+4. Change the login theme. You should see the theme uhn in the list.

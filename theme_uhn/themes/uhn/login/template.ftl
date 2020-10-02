@@ -36,7 +36,7 @@
 <body class="${properties.kcBodyClass!} template">
     <div class="topbar">
         <div class="logo"></div>
-        <h6 class="tagline">Login with myUHN</h6>
+        <h6 class="tagline">Log in with myUHN</h6>
     </div>
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
@@ -57,7 +57,7 @@
                     </#if>
 
                     <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <h5 class="content-title">Login with myUHN</h5>
+                        <h5 class="content-title">Log in with myUHN</h5>
                         <div class="content-tagline">Use your myUHN credentials to log in to PATH.</div>
                         <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
                             <#nested "form">

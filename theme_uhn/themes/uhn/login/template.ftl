@@ -35,15 +35,11 @@
 
 <body class="${properties.kcBodyClass!} template">
     <div class="topbar">
-        <p class="tagline">Login with myUHN</p>
+        <div class="logo"></div>
+        <h6 class="tagline">Login with myUHN</h6>
     </div>
-
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
-
-            <div id="kc-header" class="${properties.kcHeaderClass!}">
-                <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header"></div>
-            </div>
 
             <div id="kc-content" class="${properties.kcContentClass!}">
                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
@@ -61,15 +57,19 @@
                     </#if>
 
                     <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                        <p class="content-title">Login with myUHN</p>
-                        <p class="content-tagline">Use your myUHN credentials to log in to PATH.</p>
+                        <h5 class="content-title">Login with myUHN</h5>
+                        <div class="content-tagline">Use your myUHN credentials to log in to PATH.</div>
                         <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
                             <#nested "form">
                         </div>
 
                         <div class="footer-info">
-                            <p><span>Don’t have a myUHN account? </span> <a href="https://path.uhn.ca/login">Log in as a guest</a></p>
-                            <p><a href="https://registermyuhn.uhn.ca/">Learn more about myUHN registration.</a></p>
+                            <div class="footer-info-font">
+                                <span>Don’t have a myUHN account?</span>&nbsp;<a href="https://path.uhn.ca/login">Log in as a guest</a>
+                            </div>
+                            <div class="footer-info-font">
+                                <a href="https://registermyuhn.uhn.ca/">Learn more about myUHN registration.</a>
+                            </div>
                         </div>
                     </div>
 

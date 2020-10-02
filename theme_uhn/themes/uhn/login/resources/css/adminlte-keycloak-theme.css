@@ -3,38 +3,57 @@ body {
 }
 
 .topbar {
-    position: absolute;
     width: 100%;
     height: 56px;
-    left: 0px;
-    top: 0px;
     background: #2899D5;
-    padding-top: 1em;
-    padding-left: 2.5em;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
 }
 
-.topbar p.tagline {
+.logo {
     background: no-repeat url("../img/myUHN_logo_white.svg");
-    position: absolute;
-    padding-left: 5em;
+    height: 24px;
+    width: 66px;
+}
 
-    /* Headline 6 */
+.tagline {
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 1.5em;
-    line-height: 19px;
-
-    /* identical to box height, or 120% */
-    display: flex;
-    align-items: center;
-    text-align: center;
+    font-size: 20px;
     letter-spacing: 0.15px;
-    /* surface */
     color: #FFFFFF;
+    margin: 0 0 6px 24px;
 }
 
-#kc-content, #kc-header-wrapper {
+.footer-info-font {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-top: 32px;
+    text-align: center;
+}
+
+.footer-info-font a {
+    color: #008060;
+}
+
+#kc-form-buttons {
+    margin-top: 25px;
+    width: 100%;
+}
+
+#kc-content {
+    max-width: 440px;
+    margin: 76px auto 0;
+    padding: 20px;
+}
+
+#kc-header-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -52,43 +71,23 @@ body {
     padding-left: 18px;
 }
 
-#kc-form p.content-title {
-    position: static;
-    height: 24px;
-    left: 0px;
-    top: 0px;
+#kc-form .content-title {
+    margin: 0 0 8px;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
-    line-height: 24px;
     letter-spacing: 0.18px;
     color: rgba(0, 0, 0, 0.87);
-    flex: none;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin-left: 0;
 }
 
-
-#kc-form p.content-tagline {
-    position: static;
-    height: 24px;
-    left: 0px;
-    top: 32px;
+#kc-form .content-tagline {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 24px;
     letter-spacing: 0.5px;
     color: rgba(0, 0, 0, 0.6);
-    flex: none;
-    order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin-left: 0;
 }
 
 #kc-form-login label {
@@ -115,28 +114,17 @@ body {
     border-color: #DADADA;
     border-radius: 4px;
     height: 48px;
+    font-family: Roboto;
 }
 
 #kc-form-login #kc-login {
-    position: static;
-    height: 48px;
-    left: 0px;
-    top: 288px;
     background: #008060;
     border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    border-radius: 4px;
-    flex: none;
-    order: 3;
-    align-self: center;
-    flex-grow: 0;
-    width: 28em;
-    margin-top: 1.5em;
+    width: 100%;
     font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 24px;
 }
 
 div.footer-info p {
@@ -155,11 +143,6 @@ div.footer-info p {
     flex-grow: 0;
     margin-top: 2.4em;
 }
-
-div.footer-info p a {
-    color: #008060;
-}
-
 
 /*
 #kc-header, #kc-content {

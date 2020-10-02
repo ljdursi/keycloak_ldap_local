@@ -19,7 +19,7 @@
                                    value="${(login.username!'')}" type="text" disabled/>
                         <#else>
                             <input id="username" class="form-control ${properties.kcInputClass!}" name="username"
-                                   value="${(login.username!'')}" type="text" autofocus autocomplete="off"/>
+                                   value="${(login.username!'')}" type="text" autofocus autocomplete="off" placeholder="Enter your email address"/>
                         </#if>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
 
                     <div class="${properties.kcInputWrapperClass!}">
                         <input id="password" class="form-control ${properties.kcInputClass!}" name="password"
-                               type="password" autocomplete="off"/>
+                               type="password" autocomplete="off" placeholder="Enter your password"/>
                     </div>
                 </div>
 
@@ -40,7 +40,7 @@
                         <div id="kc-form-buttons" class="col-xs-5 ${properties.kcFormButtonsClass!}">
                             <div class="${properties.kcFormButtonsWrapperClass!}">
                                 <input class="btn btn-primary btn-flat btn-block ${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}"
-                                       name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                                       name="login" id="kc-login" type="submit" value="Log in to PATH"/>
                             </div>
                             <div class="clearfix"></div>
                         </div>

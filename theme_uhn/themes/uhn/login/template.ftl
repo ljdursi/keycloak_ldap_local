@@ -65,10 +65,10 @@
 
                         <div class="footer-info">
                             <div class="footer-info-font">
-                                <span>Don’t have a myUHN account?</span>&nbsp;<a href="https://path.uhn.ca/login">Log in as a guest</a>
+                                <span>Don’t have a myUHN account?</span>&nbsp;<a href="https://path.uhn.ca/login#guest">Log in as a guest</a>
                             </div>
                             <div class="footer-info-font">
-                                <a href="https://registermyuhn.uhn.ca/">Learn more about myUHN registration.</a>
+                                <a href="https://www.uhn.ca/PatientsFamilies/myUHN/Pages/how_register.aspx">Learn more about myUHN registration.</a>
                             </div>
                         </div>
                     </div>
